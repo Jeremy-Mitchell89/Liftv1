@@ -1,0 +1,39 @@
+<%include ../partials/header%>
+<div class= "container">
+    <div>
+            <h5><%=workout.date%></h2>
+            <h1><%=workout.title%></h1>
+            <p><%=workout.notes%></p>
+            <a class = "btn btn-warning btn-sm"  href = "<%=workout.id%>/edit">Edit This Workout</a>
+            <a class = "btn btn-success" href="/log/<%=workout._id%>/move/new">Add a movement</a>
+        <% workout.move.forEach(function(lift){ %>
+        <div class="log-move">
+        <h2><%= lift.movement %></h2>
+            <% for(var i = 0; i<lift.weight.length; i++){ %>
+            <div>
+                <%= lift.weight[i] + " x"%>
+                <%= lift.reps[i] %>
+            </div>
+                <% } %>
+        </div>
+            <a class = "btn btn-xs btn-warning" href="/log/<%=workout.id%>/move/<%=lift._id%>/edit">Edit this movement</a>
+            <form action="/log/<%=workout.id%>/move/<%=lift._id%>" method="POST">
+                <input type = "submit" class = "btn btn-xs btn-danger" value="Delete"></input>
+            </form>
+            <!--</div>-->
+        <% }) %>
+        <!--</div>-->
+    </div>
+    <div>
+        <form action = "/log/<%=workout._id%>?_method=delete" method="POST">
+            <button class = "btn btn-danger">Delete This Workout</button>
+        </form>
+    </div>
+    <div>
+        <a href = "/log">Go Back</a>
+    </div>
+</div>
+
+
+
+<%include ../partials/footer%>

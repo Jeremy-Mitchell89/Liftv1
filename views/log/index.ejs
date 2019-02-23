@@ -1,0 +1,22 @@
+<%include ../partials/header%>
+<div class="container">
+        <div class="container-2">
+            <h1>Log</h1>
+            <p>Select past workout to view or edit or add a new workout</p>
+            <a class = "btn btn-outline-light" href="/log/new">Add New Workout</a>
+        </div>
+    <div class = "row" style="display:flex; flex-wrap:wrap">
+        <%log.forEach(function(workout){ %>
+            <%if(currentUser && workout.author.id.equals(currentUser._id)){%>
+            <div class="col-md-2 col-sm-6 log">
+                <p class="log-date"><%=workout.date%></p>
+                <h4 class="log-title" href="/log/<%=workout.id%>"><%=workout.title%></h4>
+                <a class="btn btn-outline-info btn-sm" href="/log/<%=workout.id%>">View Workout</a>
+            </div>
+            <% } %>
+        <%})%>
+    </div>
+</div>
+
+
+<%include ../partials/footer%>

@@ -1,0 +1,24 @@
+<%include ../partials/header%>
+    <h1><%=user.username%> Profile</h1>
+    <form action = "/user/<%=user._id%>?_method=PUT" method = "POST">
+        <div style = "width:20%">
+        <div class="form-group">
+        <label>Bench 1RM</label>
+            <input  class = "form-control" type = "number" name = "bench" value = <%=user.bench%>></input>
+        </div>
+        <label>Squat 1RM</label>
+        <div class="form-group">
+            <input  class = "form-control" type = "number" name = "squat" value = <%=user.squat%>></input>
+        </div>
+        <label>OHP 1RM</label>
+        <div class="form-group">
+            <input  class = "form-control" type = "number" name = "ohp" value = <%=user.ohp%>></input>
+        </div>
+        <label>Deadlift 1RM</label>
+        <div class="form-group">
+            <input  class = "form-control" type = "number" name = "deadlift" value = <%=user.deadlift%>></input>
+        </div>
+        <button>Submit</button>
+        </div>
+    </form>
+<%include ../partials/footer%>

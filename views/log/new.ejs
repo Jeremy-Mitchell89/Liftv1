@@ -1,0 +1,19 @@
+<%include ../partials/header%>
+<div class = "container">
+    <h1 style="width: 50%; margin:25px auto;">New</h1>    
+    <form action="/log" method="POST">
+        <div style="width: 50%; margin:25px auto;">
+            <div class = "form-group">
+            <input class = "form-control" type = "text" name = "title" placeholder="Title of Workout"></input>
+            </div>
+            <div class = "form-group">
+            <input class = "form-control input-group date" type="date" name = "date"></input>
+            </div>
+            <textarea  rows="10" cols="67" name="notes" placeholder="Notes On Workout"></textarea>
+            </div>
+            <button class="btn btn-lrg btn-primary btn-block">Submit!</button>
+        </div>
+    </form>
+</div>
+
+<%include ../partials/footer%>

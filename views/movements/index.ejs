@@ -1,0 +1,34 @@
+<%include ../partials/header%>
+
+<div class="container">
+        <div class="container-2">
+            <h1>Movements</h1>
+            <p>Select a body part to narrow selection</p>
+            <div class = "dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Body Part
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Chest</a>
+                <a class="dropdown-item" href="#">Legs</a>
+                <a class="dropdown-item" href="#">Back</a>
+            </div>
+            <a class = "btn btn-success" href="/movements/new">Add a New Movement</a>
+        </div>
+        </div>
+    <div class = "row text-center" style="display:flex; flex-wrap: wrap; padding-top:50px">
+        <%movements.forEach(function(movement){%>
+            <div class="col-md-3 col-sm-6">
+                <div class="img-fluid">
+                    <img src="<%=movement.image %>" class="img-fluid">
+                    <div class="caption">
+                        <h4><%=movement.name%></h4>
+                        <a class = "btn btn-success" href="/movements/<%=movement.id%>">More Info</a>
+                    </div>
+                </div>
+            </div>
+        <%})%>
+    </div>
+</div>
+
+<%include ../partials/footer%>

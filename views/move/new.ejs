@@ -1,0 +1,22 @@
+<% include ../partials/header%>
+<div class="container">
+    <form action = "/log/<%=log._id%>/move" method = "POST">
+        <div class="addMovementField">
+            <div class = "form-group form-inline">
+            <input class = "form-control" type = "text" name = "name" placeholder="Movement" style="width:50%%; margin-right:10px"></input>
+        </div>
+            <div class="info">
+                <div class = "form-group form-inline">
+                    <h3 class = "moveLabel">Weight:</h3>
+                    <input id = "weight1" class = "form-control" type = "number" name="weight" placeholder="Weight Used" style="width:25%; margin-right:25px"></input>
+                    <h3 class = "moveLabel">Reps:</h3>
+                    <input id = "set1" class = "form-control" type = "number" name="reps" placeholder="Reps" style = "width:25%; margin-right:10px"></input>
+                    <p class="addSet">+</p>
+                    <p class = "removeSet">-</p>
+                </div>
+            </div>
+            <button class="btn btn-success">Submit</button>
+        </div>
+    </form>
+</div>
+<% include ../partials/footer%>

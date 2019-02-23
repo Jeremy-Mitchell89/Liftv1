@@ -1,0 +1,25 @@
+<%include ../partials/header%>
+<div class= "container">
+    <div>
+        <h1><%=movement.name%></h1>
+        <div class = "img-thumbnail">
+           <image  class = "img-fluid" alt="Responsive image" src="<%=movement.image%>"> 
+        </div>
+        
+        <p><%=movement.description%></p>
+        <p>Body Part worked: <%=movement.bodyPart%></p>
+    </div>
+    <div>
+        <a class = "btn btn-success" href = "<%=movement.id%>/edit">Edit This Movement</a>
+        <form action = "/movements/<%=movement._id%>?_method=delete" method="POST">
+            <button class = "btn btn-danger">Delete This Movement</button>
+        </form>
+    </div>
+    <div>
+        <a href = "/movements">Go Back</a>
+    </div>
+</div>
+
+
+
+<%include ../partials/footer%>
